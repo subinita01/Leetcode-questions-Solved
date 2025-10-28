@@ -1,0 +1,81 @@
+Description
+
+You will be given a string S of size N. You have to perform a particular type of query multiple times on this string.
+
+The query is:
+For any string T, find the length of a lexicographically smallest suffix string of S that starts with T. If there is no such suffix, return 0.
+
+After performing all the queries, you have to return the sum of results of all the queries.
+
+Since the answer can be very large, return it modulo 10^9 + 7.
+
+Function Description
+
+Complete the suffixQueries function in the editor below. It has the following parameter(s):
+
+S (STRING): The given string.
+
+query (STRING ARRAY): Array of strings corresponding to the i-th query.
+
+Return:
+The function must return an INTEGER denoting the Sum of results of all the queries modulo 10^9 + 7.
+
+Constraints
+
+1 <= N <= 10^5
+
+1 <= Q <= 10^5
+
+1 <= len(S) <= 10^5
+
+1 <= len(query[i]) <= 10
+
+Sample Testcases
+
+Testcase 1
+
+Input:
+
+S = "mzadpoghyykht"
+
+query = 
+
+"yk"
+
+Output: 4
+
+Description: Here only suffix starting at position 10 starts from "yk" (the suffix is "ykht"). So length is 4.
+
+Testcase 2
+
+Input:
+
+S = "ktmrgjswhwxu"
+
+query = 
+
+"z", "w"
+
+Output: 5
+
+Description:
+
+Query "z": No suffix starts from "z". (Result = 0)
+
+Query "w": Suffixes from "w" are "whwxu" (length 5) and "wxu" (length 3). The lexicographically shorter one is "whwxu". Correction based on PDF text: "we choose lexicographic shorter" likely means the lexicographically smallest string, not the one with shorter length. "whwxu" is lexicographically smaller than "wxu". The PDF output is 5, corresponding to the length of "whwxu".
+
+Total Sum = 0 + 5 = 5.
+
+Testcase 3
+
+Input:
+
+S = "tvtrpudosnlydgi"
+
+query = 
+
+"do"
+
+Output: 9
+
+Description: Here only suffix starting from "do" is: "dosnlydgi". So length is 9.
